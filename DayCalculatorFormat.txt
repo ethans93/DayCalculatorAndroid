@@ -1,0 +1,82 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select the current day:"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/monday_btn"
+        android:text="Monday"
+        android:textColor="#000000"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tuesday_btn"
+        android:text="Tuesday"
+        android:textColor="#000000"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/wednesday_btn"
+        android:text="Wednesday"
+        android:textColor="#000000"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/thursday_btn"
+        android:text="Thursday"
+        android:textColor="#000000"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/friday_btn"
+        android:text="Friday"
+        android:textColor="#000000"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/saturday_btn"
+        android:text="Saturday"
+        android:textColor="#000000"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sunday_btn"
+        android:text="Sunday"
+        android:textColor="#000000"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How many days in the future?"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addeddays"
+        android:textSize="24dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/calculate_btn"
+        android:text="Calculate"
+        android:textColor="#000000"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/result"
+        android:textColor="#000000"
+        android:textSize="24dp" />
+
+
+</LinearLayout>

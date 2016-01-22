@@ -1,0 +1,173 @@
+package com.example.ethan.daycalculator;
+
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+/**
+ * 1/21/16
+ * Ethan Steen
+ * P.E. 3.5, the purpose of this program is to find the day of the week any number of days from the current day of the week
+ * Day Calculator Driver class
+ */
+
+public class MainActivity extends Activity  {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        final dayStart day = new dayStart ();
+        final Button monday = (Button) this.findViewById(R.id.monday_btn);
+        final Button tuesday = (Button) this.findViewById(R.id.tuesday_btn);
+        final Button wednesday = (Button) this.findViewById(R.id.wednesday_btn);
+        final Button thursday = (Button) this.findViewById(R.id.thursday_btn);
+        final Button friday = (Button) this.findViewById(R.id.friday_btn);
+        final Button saturday = (Button) this.findViewById(R.id.saturday_btn);
+        final Button sunday = (Button) this.findViewById(R.id.sunday_btn);
+        final Button calculate = (Button) this.findViewById(R.id.calculate_btn);
+//When each button is pressed the color of that button will change to green and the others to(or back to) white
+//Clicking a button will also send an integer value to the class dayStart to the method setStartDay.  That value can be over written
+//by sequential button clicks and will be retrieved by the method getStartDay when the calculate button is pressed
+        monday.setOnClickListener(new Button.OnClickListener() {
+//Monday Button
+            @Override
+            public void onClick(View vMonday) {
+                monday.getBackground().setColorFilter(0xff00ff00, PorterDuff.Mode.MULTIPLY);//0xff00ff00 is android color code for green
+                tuesday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);//0xffffffff is android color code for white
+                wednesday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                thursday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                friday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                saturday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                sunday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                day.setStartDay(0);//Specified number to be sent to class dayStart
+            }
+        });
+        tuesday.setOnClickListener(new Button.OnClickListener() {
+//Tuesday Button
+            @Override
+            public void onClick(View v) {
+                monday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                tuesday.getBackground().setColorFilter(0xff00ff00, PorterDuff.Mode.MULTIPLY);
+                wednesday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                thursday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                friday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                saturday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                sunday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                day.setStartDay(1);
+            }
+        });
+        wednesday.setOnClickListener(new Button.OnClickListener() {
+//Wednesday Button
+            @Override
+            public void onClick(View v) {
+                monday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                tuesday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                wednesday.getBackground().setColorFilter(0xff00ff00, PorterDuff.Mode.MULTIPLY);
+                thursday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                friday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                saturday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                sunday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                day.setStartDay(2);
+            }
+        });
+        thursday.setOnClickListener(new Button.OnClickListener() {
+//Thursday Button
+            @Override
+            public void onClick(View v) {
+                monday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                tuesday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                wednesday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                thursday.getBackground().setColorFilter(0xff00ff00, PorterDuff.Mode.MULTIPLY);
+                friday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                saturday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                sunday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                day.setStartDay(3);
+            }
+        });
+        friday.setOnClickListener(new Button.OnClickListener() {
+//Friday Button
+            @Override
+            public void onClick(View v) {
+                monday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                tuesday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                wednesday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                thursday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                friday.getBackground().setColorFilter(0xff00ff00, PorterDuff.Mode.MULTIPLY);
+                saturday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                sunday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                day.setStartDay(4);
+            }
+        });
+        saturday.setOnClickListener(new Button.OnClickListener() {
+//Saturday Button
+            @Override
+            public void onClick(View v) {
+                monday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                tuesday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                wednesday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                thursday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                friday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                saturday.getBackground().setColorFilter(0xff00ff00, PorterDuff.Mode.MULTIPLY);
+                sunday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                day.setStartDay(5);
+            }
+        });
+        sunday.setOnClickListener(new Button.OnClickListener() {
+//Sunday Button
+            @Override
+            public void onClick(View v) {
+                monday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                tuesday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                wednesday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                thursday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                friday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                saturday.getBackground().setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
+                sunday.getBackground().setColorFilter(0xff00ff00, PorterDuff.Mode.MULTIPLY);
+                day.setStartDay(6);
+            }
+        });
+        calculate.setOnClickListener(new Button.OnClickListener(){
+//Calculate Button
+            @Override
+            public void onClick(View v) {
+                TextView result = (TextView) findViewById(R.id.result);
+//int dayStart in the MainActivity class calls upon the getStartDay method in the dayStart class to return a value to initialize itself
+                int dayStart = day.getStartDay();
+                int dayFinal;
+                String dayFirst;
+                String dayEnd;
+//dayShow is an array of strings with assigned values, i.e. dayShow[3] gives the string value of "Thursday" because "Thursday" is the
+//fourth string value entered into the array(arrays start at 0 so the first value entered will be assigned to example[0] and second being example[1])
+                String [] dayShow = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+//Find and read input data entered by user in GUI and convert the string value to an integer to use
+                EditText addDaysInput = (EditText) findViewById(R.id.addeddays);
+                String addDaysString = addDaysInput.getText().toString();
+                int dayAdd = Integer.parseInt(addDaysString);
+//Formula to find the desired day
+                int dayTotal = dayAdd + dayStart;
+                if(dayTotal>6){
+                    while(dayTotal>6){
+                        dayTotal-=7;
+                    }
+                    dayFinal=dayTotal;
+                }
+                else{
+                    dayFinal=dayTotal;
+                }
+//The day of the week shown will be depending on the start day selected and the number retrieved for the dayStart class or the output number from the formula above
+//The output number will be inserted into the array to decide the corresponding day of the week
+                dayFirst = dayShow[dayStart];//dayStart = x, dayShow[x], dayFirst = dayShow[x]
+                dayEnd = dayShow[dayFinal];//dayFinal = y, dayShow[y], dayEnd = dayShow[y]
+//A string is initialized with the given and solved information
+                String resultShow = dayAdd + " days from today, " +  dayFirst + ", will be a " + dayEnd;
+//result.setText takes a string and displays it in the GUI
+                result.setText(resultShow);
+            }
+        });
+    }
+}
